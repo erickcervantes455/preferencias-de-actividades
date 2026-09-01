@@ -69,10 +69,57 @@ namespace preferencias_de_actividades
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+            //4.- obtener modalidad seleccionada
+            string modalidad = "";
+            if (radioButtonpresencial.Checked)
+            {
+                modalidad = "Presencial";
             }
-            
+            else if (radioButtonlinea.Checked)
+            {
+                modalidad = "Virtual";
+            }
+            else if (radioButtonhibrida.Checked)
+            {
+                modalidad = "Híbrida";
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Por favor, selecciona una modalidad.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            //5.- mostrar resumen
+            string resumen =
+                "Resumen de preferencias\r\n" +
+                "__________________________\r\n" +
+                "Nombre: " + textBoxnombre.Text + "\r\n" +
+                "Actividades: " + string.Join(", ", groupBoxactividades) + "\r\n" +
+                "Modalidad: " + modalidad;
+            textBoxresumen.Text = resumen;
         }
-    }           
+
+        private void buttonlimpiar_Click(object sender, EventArgs e)
+        {
+            //limpiar nombre 
+            textBoxnombre.Clear();
+            //limpiar actividades
+            deportes.Checked = false;
+            checkBoxmusica.Checked = false;
+            checkBoxarte.Checked = false;
+            checkBoxprogramacion.Checked = false;
+            checkBoxlectura.Checked = false;
+            //limpiar modalidad
+            radioButtonpresencial.Checked = false;
+            radioButtonlinea.Checked = false;
+            radioButtonhibrida.Checked = false;
+            //limpiar resumen
+            textBoxresumen.Clear();
+        }
+    }
+}           
 
 
 

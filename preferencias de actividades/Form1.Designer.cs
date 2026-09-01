@@ -44,7 +44,7 @@
             radioButtonlinea = new RadioButton();
             radioButtonhibrida = new RadioButton();
             radioButtonpresencial = new RadioButton();
-            textBox1 = new TextBox();
+            textBoxresumen = new TextBox();
             groupBoxactividades.SuspendLayout();
             groupBoxmodALIDAD.SuspendLayout();
             SuspendLayout();
@@ -86,6 +86,7 @@
             buttonlimpiar.TabIndex = 5;
             buttonlimpiar.Text = "Limpiar";
             buttonlimpiar.UseVisualStyleBackColor = true;
+            buttonlimpiar.Click += buttonlimpiar_Click;
             // 
             // labelresumen
             // 
@@ -216,14 +217,14 @@
             radioButtonpresencial.Text = "Presencial";
             radioButtonpresencial.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxresumen
             // 
-            textBox1.Location = new Point(63, 452);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(418, 117);
-            textBox1.TabIndex = 10;
-            textBox1.TextChanged += textBox1_TextChanged;
+            textBoxresumen.Location = new Point(54, 434);
+            textBoxresumen.Multiline = true;
+            textBoxresumen.Name = "textBoxresumen";
+            textBoxresumen.Size = new Size(438, 132);
+            textBoxresumen.TabIndex = 10;
+            textBoxresumen.TextChanged += textBox1_TextChanged;
             // 
             // Form1
             // 
@@ -231,7 +232,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(556, 595);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxresumen);
             Controls.Add(groupBoxmodALIDAD);
             Controls.Add(groupBoxactividades);
             Controls.Add(texresumen);
@@ -269,6 +270,6 @@
         private RadioButton radioButtonlinea;
         private RadioButton radioButtonhibrida;
         private RadioButton radioButtonpresencial;
-        private TextBox textBox1;
+        private TextBox textBoxresumen;
     }
 }
